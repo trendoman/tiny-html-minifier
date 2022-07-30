@@ -52,7 +52,7 @@ class TinyMinify
         if( ! is_null($redirect_url) ){ return; }
 
         // comment following to always compress all pages without tag
-        if( ! isset($PAGE->minify) && $PAGE->minify !== 1 ){ return; }
+        if( ! isset($PAGE->minify) || $PAGE->minify !== 1 ){ return; }
 
         $minifier = new TinyHtmlMinifier($PAGE->minify_options);
         $html = $minifier->minify($html);
