@@ -1,6 +1,18 @@
 # CouchCMS HTML Minifer
 
-CouchCMS Addon. Adds a new `<cms:minify>`-Tag to minify/compress the HTML Output.
+CouchCMS Addon. Adds two new tags to minify/compress the HTML Output.
+
+*minify* compresses the enclosed HTML:
+
+```xml
+<cms:minify> .. HTML .. </cms:minify>
+```
+
+*minify_page* compresses the whole page
+
+```xml
+<cms:minify_page />
+```
 
 ## Installation
 
@@ -37,16 +49,17 @@ Code will minified to:
 <p>Compression works:</p> <ul> <li> Really? </li> <li> Really! </li> </ul> 
 ```
 
-## Parameter
+## Parameters
 
 * collapse_whitespace
 * disable_comments
 
-Both parameter are boolean and can set to `true` or `false` (default is `false`):
+Expected values are ***1*** or ***0***. Defaults are ***0***
 
 ``` html
-<cms:minify collapse_whitespace="true" disable_comments="true"></cms:minify>
+<cms:minify_page collapse_whitespace='1' disable_comments='1' />
 ```
 
 ## Requirements
+
 PHP7+
