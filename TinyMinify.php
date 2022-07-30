@@ -54,7 +54,7 @@ class TinyMinify
         // comment following to always compress all pages without tag
         if( ! isset($PAGE->minify) || $PAGE->minify !== 1 ){ return; }
 
-        $minifier = new TinyHtmlMinifier($PAGE->minify_options);
+        $minifier = new TinyHtmlMinifier( (array) $PAGE->minify_options );
         $html = $minifier->minify($html);
     }
 
